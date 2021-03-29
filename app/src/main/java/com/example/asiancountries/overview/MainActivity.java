@@ -3,7 +3,6 @@ package com.example.asiancountries.overview;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,28 +11,27 @@ import android.os.Bundle;
 
 import com.example.asiancountries.R;
 import com.example.asiancountries.detail.DetailActivity;
-import com.example.asiancountries.network.Country;
+import com.example.asiancountries.models.AsiaCountry;
 import com.example.asiancountries.utils.AppConstants;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements OverviewAdapter.OnItemClickListener {
 
-    public List<Country> countriesList;
+    public List<AsiaCountry> countriesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        OverviewViewModelFactory overviewViewModelFactory = new OverviewViewModelFactory();
-        OverviewViewModel viewModel = new ViewModelProvider(this, overviewViewModelFactory).get(OverviewViewModel.class);
+        OverviewViewModel viewModel = new OverviewViewModel(getApplication());
 
         viewModel.getCountries();
 
-        final Observer<List<Country>> countryObserver = new Observer<List<Country>>() {
+        final Observer<List<AsiaCountry>> countryObserver = new Observer<List<AsiaCountry>>() {
             @Override
-            public void onChanged(@Nullable final List<Country> countries) {
+            public void onChanged(@Nullable final List<AsiaCountry> countries) {
 
                 OverviewAdapter adapter = new OverviewAdapter(getApplicationContext(), countries);
                 countriesList = countries;
@@ -50,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements OverviewAdapter.O
     @Override
     public void onItemClick(int position) {
         Intent detailIntent = new Intent(this, DetailActivity.class);
-        Country clickedItem = countriesList.get(position);
+        AsiaCountry clickedItem = countriesList.get(position);
 
         detailIntent.putExtra(AppConstants.EXTRA_SELECTED_COUNTRY,clickedItem);
         startActivity(detailIntent);

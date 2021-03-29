@@ -1,5 +1,7 @@
 package com.example.asiancountries.network;
 
+import com.example.asiancountries.models.Country;
+
 import java.util.List;
 
 import retrofit2.Call;

@@ -1,9 +1,10 @@
 package com.example.asiancountries.database;
 
 import androidx.room.Dao;
-import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+
+import com.example.asiancountries.models.PersistentCountry;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public interface CountryDao {
     List<PersistentCountry> getAllCountries();
 
     @Insert
-    void insertCountry(PersistentCountry country);
+    void saveCountries(List<PersistentCountry> countries);
 
     @Query("delete from PersistentCountry")
     void delete();

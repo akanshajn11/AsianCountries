@@ -11,14 +11,14 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.asiancountries.R;
-import com.example.asiancountries.network.Country;
+import com.example.asiancountries.models.AsiaCountry;
 import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou;
 
 import java.util.List;
 
 public class OverviewAdapter extends RecyclerView.Adapter<OverviewAdapter.ViewHolder> {
 
-    private List<Country> dataSet;
+    private List<AsiaCountry> dataSet;
     private Context cxt;
     private OnItemClickListener mListener;
 
@@ -30,7 +30,7 @@ public class OverviewAdapter extends RecyclerView.Adapter<OverviewAdapter.ViewHo
         mListener = listener;
     }
 
-    public OverviewAdapter(Context context, List<Country> countries) {
+    public OverviewAdapter(Context context, List<AsiaCountry> countries) {
         cxt = context;
         dataSet = countries;
     }
@@ -69,7 +69,7 @@ public class OverviewAdapter extends RecyclerView.Adapter<OverviewAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-        Country currentItem = dataSet.get(position);
+        AsiaCountry currentItem = dataSet.get(position);
         String imageUrl = currentItem.getFlag();
         String name = currentItem.getName();
         viewHolder.name.setText(name);
