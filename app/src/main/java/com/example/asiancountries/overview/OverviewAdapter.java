@@ -19,10 +19,19 @@ import java.util.List;
 public class OverviewAdapter extends RecyclerView.Adapter<OverviewAdapter.ViewHolder> {
 
     private List<Country> dataSet;
-    private Context mContext;
+    private Context cxt;
+    private OnItemClickListener mListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
 
     public OverviewAdapter(Context context, List<Country> countries) {
-        mContext = context;
+        cxt = context;
         dataSet = countries;
     }
 
@@ -35,13 +44,25 @@ public class OverviewAdapter extends RecyclerView.Adapter<OverviewAdapter.ViewHo
             super(view);
             name = view.findViewById(R.id.name);
             flag = view.findViewById(R.id.flag);
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        int position = getAbsoluteAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(mContext)
+        View view = LayoutInflater.from(cxt)
                 .inflate(R.layout.row_country, parent, false);
         return new ViewHolder(view);
     }
@@ -51,10 +72,8 @@ public class OverviewAdapter extends RecyclerView.Adapter<OverviewAdapter.ViewHo
         Country currentItem = dataSet.get(position);
         String imageUrl = currentItem.getFlag();
         String name = currentItem.getName();
-
         viewHolder.name.setText(name);
-
-        GlideToVectorYou.init().with(mContext).load(Uri.parse(imageUrl), viewHolder.flag);
+        GlideToVectorYou.init().with(cxt).load(Uri.parse(imageUrl), viewHolder.flag);
     }
 
     @Override

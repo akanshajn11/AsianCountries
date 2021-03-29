@@ -63,37 +63,6 @@ public class Country {
     }
 }
 
-class Language {
-
-    @SerializedName("iso639_1")
-    String iso639_1;
-
-    @SerializedName("iso639_2")
-    String iso639_2;
-
-    @SerializedName("name")
-    String name;
-
-    @SerializedName("nativeName")
-    String nativeName;
-
-    public String getIso639_1() {
-        return iso639_1;
-    }
-
-    public String getIso639_2() {
-        return iso639_2;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getNativeName() {
-        return nativeName;
-    }
-
-}
 
 
 
