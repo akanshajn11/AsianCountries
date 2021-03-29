@@ -2,9 +2,10 @@ package com.example.asiancountries.network;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Country {
+public class Country implements Serializable {
 
     @SerializedName("name")
     String name;
