@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.asiancountries.network.Country;
 import com.example.asiancountries.network.RetrofitApiService;
+import com.example.asiancountries.utils.AppConstants;
 
 import java.util.List;
 
@@ -17,10 +18,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class OverviewViewModel extends ViewModel {
 
-    public static final String BASE_URL = "https://restcountries.eu/";
-
     Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(AppConstants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
@@ -29,7 +28,7 @@ public class OverviewViewModel extends ViewModel {
     public LiveData<List<Country>> getCountries() {
 
         if (countries == null) {
-            countries = new MutableLiveData<List<Country>>();
+            countries = new MutableLiveData<>();
             loadCountries();
         }
         return countries;
