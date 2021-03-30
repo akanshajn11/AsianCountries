@@ -3,11 +3,22 @@
     <dimen name="cardHeight">100dp</dimen>
     <dimen name="cardMargin">10dp</dimen>
     <dimen name="cardElevation">60dp</dimen>
-    <dimen name="imageWidth">100dp</dimen>
+    <dimen name="imageWidth">150dp</dimen>
     <dimen name="imageHeight">120dp</dimen>
     <dimen name="imageMarginTop">10dp</dimen>
     <dimen name="imageMarginLeft">20dp</dimen>
     <dimen name="cardTextLeftMargin">20dp</dimen>
     <dimen name="cardTextTopMargin">20dp</dimen>
     <dimen name="detailImageHeight">320dp</dimen>
+    <dimen name="detailRowMarginTop">16dp</dimen>
+    <dimen name="labelWidth">110dp</dimen>
+    <dimen name="labelMarginStart">16dp</dimen>
+    <dimen name="labelTextSize">20sp</dimen>
+    <dimen name="attributeTextSize">20sp</dimen>
+    <dimen name="attributeMargin">16dp</dimen>
+    <dimen name="buttonTextSize">16sp</dimen>
+    <dimen name="errorMargin">10dp</dimen>
+    <dimen name="cardCornerRadius">4dp</dimen>
+    <dimen name="cardTextMargin">10dp</dimen>
+    <dimen name="cardTextSize">18sp</dimen>
 </resources>

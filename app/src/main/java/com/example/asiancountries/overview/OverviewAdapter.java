@@ -20,14 +20,14 @@ public class OverviewAdapter extends RecyclerView.Adapter<OverviewAdapter.ViewHo
 
     private List<AsiaCountry> dataSet;
     private Context cxt;
-    private OnItemClickListener mListener;
+    private OnItemClickListener countryListener;
 
     public interface OnItemClickListener {
         void onItemClick(int position);
     }
 
     public void setOnItemClickListener(OnItemClickListener listener) {
-        mListener = listener;
+        countryListener = listener;
     }
 
     public OverviewAdapter(Context context, List<AsiaCountry> countries) {
@@ -48,10 +48,10 @@ public class OverviewAdapter extends RecyclerView.Adapter<OverviewAdapter.ViewHo
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (mListener != null) {
+                    if (countryListener != null) {
                         int position = getAbsoluteAdapterPosition();
                         if (position != RecyclerView.NO_POSITION) {
-                            mListener.onItemClick(position);
+                            countryListener.onItemClick(position);
                         }
                     }
                 }
@@ -73,7 +73,7 @@ public class OverviewAdapter extends RecyclerView.Adapter<OverviewAdapter.ViewHo
         String imageUrl = currentItem.getFlag();
         String name = currentItem.getName();
         viewHolder.name.setText(name);
-        GlideToVectorYou.init().with(cxt).load(Uri.parse(imageUrl), viewHolder.flag);
+        GlideToVectorYou.init().with(cxt).setPlaceHolder(R.drawable.placeholder, R.drawable.placeholder).load(Uri.parse(imageUrl), viewHolder.flag);
     }
 
     @Override

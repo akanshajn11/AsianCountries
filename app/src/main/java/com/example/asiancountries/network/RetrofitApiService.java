@@ -10,7 +10,9 @@ import retrofit2.http.GET;
 public interface RetrofitApiService {
 
     @GET("rest/v2/region/asia")
-    Call<List<Country>> getCountries();
+    Call<List<Country>> getCountries(
+
+    );
 
 }
 

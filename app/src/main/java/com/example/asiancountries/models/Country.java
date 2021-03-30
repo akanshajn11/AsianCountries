@@ -1,14 +1,16 @@
 package com.example.asiancountries.models;
 
 import android.text.TextUtils;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class Country implements AsiaCountry {
+public class Country implements AsiaCountry {
 
     class Language implements Serializable {
         String name;
+
         public String getName() {
             return name;
         }

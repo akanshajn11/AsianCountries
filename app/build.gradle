@@ -41,4 +41,7 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
     implementation 'com.github.corouteam:GlideToVectorYou:v2.0.0'
+    implementation "com.google.android.material:material:$material_version"
+    implementation "android.arch.paging:runtime:$paging_version"
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
 }

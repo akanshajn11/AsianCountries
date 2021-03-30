@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,192 +13,97 @@
         android:fitsSystemWindows="true"
         android:scaleType="centerCrop" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+    <LinearLayout style="@style/AttributesLayoutStyle">
 
         <TextView
             android:id="@+id/name_label"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Name"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
+            style="@style/LabelStyle"
+            android:text="Name" />
 
         <TextView
             android:id="@+id/name_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Name"
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            style="@style/AttributeStyle"
+            android:text="Name" />
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+    <LinearLayout style="@style/AttributesLayoutStyle">
 
         <TextView
             android:id="@+id/capital_label"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Capital"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
+            style="@style/LabelStyle"
+            android:text="Capital"/>
 
         <TextView
             android:id="@+id/capital"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Capital"
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            style="@style/AttributeStyle"
+            android:text="Capital" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+    <LinearLayout style="@style/AttributesLayoutStyle">
 
         <TextView
             android:id="@+id/region_label"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Region"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
+            style="@style/LabelStyle"
+            android:text="Region" />
 
         <TextView
             android:id="@+id/region"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Region"
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            style="@style/AttributeStyle"
+            android:text="Region" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+    <LinearLayout style="@style/AttributesLayoutStyle">
 
         <TextView
             android:id="@+id/subregion_label"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Subregion"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
+            style="@style/LabelStyle"
+            android:text="Subregion" />
 
         <TextView
             android:id="@+id/subregion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Subregion"
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            style="@style/AttributeStyle"
+            android:text="Subregion" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+    <LinearLayout style="@style/AttributesLayoutStyle">
 
         <TextView
             android:id="@+id/population_label"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Population"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
+            style="@style/LabelStyle"
+            android:text="Population" />
 
         <TextView
             android:id="@+id/population"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Population"
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            style="@style/AttributeStyle"
+            android:text="Population" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+    <LinearLayout style="@style/AttributesLayoutStyle">
 
         <TextView
             android:id="@+id/borders_label"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Borders"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            style="@style/LabelStyle"
+            android:text="Borders" />
 
         <TextView
             android:id="@+id/borders"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Borders"
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            style="@style/AttributeStyle"
+            android:text="Borders" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+    <LinearLayout style="@style/AttributesLayoutStyle">
 
         <TextView
             android:id="@+id/languages_label"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Languages"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            style="@style/LabelStyle"
+            android:text="Languages" />
 
         <TextView
             android:id="@+id/languages"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Languages"
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            style="@style/AttributeStyle"
+            android:text="Languages" />
     </LinearLayout>
 
 

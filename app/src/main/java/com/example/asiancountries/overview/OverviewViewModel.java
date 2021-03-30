@@ -3,6 +3,7 @@ package com.example.asiancountries.overview;
 import android.app.Application;
 import android.content.Context;
 import android.net.ConnectivityManager;
+import android.widget.Toast;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
@@ -44,14 +45,12 @@ public class OverviewViewModel extends AndroidViewModel {
 
     public LiveData<List<AsiaCountry>> getCountries() {
 
-        if (countries == null) {
-            countries = new MutableLiveData<>();
+        countries = new MutableLiveData<>();
 
-            if (this.isNetworkConnected()) {
-                this.loadCountries();
-            } else {
-                this.getAllCountriesFromDB();
-            }
+        if (this.isNetworkConnected()) {
+            this.loadCountries();
+        } else {
+            this.getAllCountriesFromDB();
         }
         return countries;
     }
@@ -70,24 +69,22 @@ public class OverviewViewModel extends AndroidViewModel {
             @Override
             public void onResponse(Call<List<Country>> call, Response<List<Country>> response) {
 
-                if (response.isSuccessful()) {
+                if (response.isSuccessful() && response.body() != null) {
                     deleteSavedCountries();
                     List<Country> newCountries = response.body();
-
                     ArrayList<AsiaCountry> asianCountries = new ArrayList<>();
-
                     for (AsiaCountry country : newCountries) {
                         asianCountries.add(country);
                     }
-
                     countries.setValue(asianCountries);
-
                     saveCountries(newCountries);
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Country>> call, Throwable t) { }
+            public void onFailure(Call<List<Country>> call, Throwable t) {
+                Toast.makeText(context, "Network failure!!", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 
@@ -98,7 +95,7 @@ public class OverviewViewModel extends AndroidViewModel {
     private void saveCountries(List<Country> countries) {
         ArrayList<PersistentCountry> persistentCountries = new ArrayList<>();
 
-        for(Country country : countries) {
+        for (Country country : countries) {
             PersistentCountry persistentCountry = new PersistentCountry();
             persistentCountry.name = country.getName();
             persistentCountry.capital = country.getCapital();
@@ -117,11 +114,13 @@ public class OverviewViewModel extends AndroidViewModel {
 
     private void getAllCountriesFromDB() {
         ArrayList<AsiaCountry> asianCountries = new ArrayList<>();
-
         for (AsiaCountry country : appDB.countryDao().getAllCountries()) {
             asianCountries.add(country);
         }
-
         countries.setValue(asianCountries);
+    }
+
+    public void deleteAllCountriesFromDB() {
+        this.appDB.countryDao().delete();
     }
 }

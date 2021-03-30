@@ -10,28 +10,28 @@ public class PersistentCountry implements AsiaCountry {
 
     @NonNull
     @PrimaryKey
-    @ColumnInfo(name="name")
+    @ColumnInfo(name = "name")
     public String name;
 
-    @ColumnInfo(name="capital")
+    @ColumnInfo(name = "capital")
     public String capital;
 
-    @ColumnInfo(name="flag")
+    @ColumnInfo(name = "flag")
     public String flag;
 
-    @ColumnInfo(name="region")
+    @ColumnInfo(name = "region")
     public String region;
 
-    @ColumnInfo(name="subregion")
+    @ColumnInfo(name = "subregion")
     public String subregion;
 
-    @ColumnInfo(name="population")
+    @ColumnInfo(name = "population")
     public String population;
 
-    @ColumnInfo(name="borders")
+    @ColumnInfo(name = "borders")
     public String borders;
 
-    @ColumnInfo(name="languages")
+    @ColumnInfo(name = "languages")
     public String languages;
 
     public String getName() {

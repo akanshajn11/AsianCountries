@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">AsianCountries</string>
+    <string name="app_name">Asian Countries</string>
+    <string name="Internet">No internet connection, Please make sure the device is connected to the internet</string>
 </resources>
